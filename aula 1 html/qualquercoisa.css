@@ -1,0 +1,29 @@
+/* p{color: brown ;
+    font-size: 18pt;
+} */
+.enrico{ 
+    color: red;
+
+}
+.pessoal{
+    color: darkorchid;
+    font-size: 20pt;
+}
+a:hover {
+    color:blueviolet
+}
+
+body{
+     background-color: white;
+     background-image: url(minimaliststarpersona.jpg);
+     width: 100%;
+     background-repeat: no-repeat;
+     background-position: center;
+     background-size: cover;
+     height: 100vh;
+     margin: 0;
+}
+
+h1 {
+    text-align: center;
+}
