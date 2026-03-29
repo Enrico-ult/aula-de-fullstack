@@ -1,0 +1,40 @@
+nav{
+    justify-content: space-evenly;
+    display: flex;
+    background-color: white;
+    padding: 8px;
+}
+.boxdecima{
+    background-color: red;
+    color: white;
+    font-size: 20pt;
+    display: flex-start;
+}
+.navegacao{
+    font-size: 15pt;
+    color: gray;
+    justify-content: space-evenly;
+}
+
+
+.box1{
+     border-color: whitesmoke;
+    border-style: solid;
+    justify-content: space-between;
+    display: flex;
+    background-color: white;
+}
+.tituloprincipal{
+    color: red;
+    font-size: 30pt;
+    padding: 70px;
+}
+.imagens{
+    flex-direction:row;
+    display: flex;
+    padding: 70px;
+    
+}
+.box3 {
+    background-color: gray;
+}
