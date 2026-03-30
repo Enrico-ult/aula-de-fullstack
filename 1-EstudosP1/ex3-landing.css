@@ -1,0 +1,341 @@
+/* ══════════════════════════════════════
+   ex3-landing.css  —  POSICIONAMENTO
+   ══════════════════════════════════════
+   TÉCNICAS:
+   - Pseudo-classes (:hover, :first-child, :nth-child)
+   - Pseudo-elementos (::before, ::after)
+   - Gradiente (linear-gradient)
+   - position: relative / absolute
+   - Seletores combinados
+   ══════════════════════════════════════ */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* ── HERO ── */
+.hero {
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  color: #fff;
+  padding: 100px 24px;
+  text-align: center;
+  position: relative; /* ← necessário para pseudo-elementos */
+  overflow: hidden;
+}
+
+/* Detalhe decorativo com ::before */
+.hero::before {
+  content: '';            /* ← pseudo-elemento precisa de content */
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.04);
+}
+
+/* Segundo detalhe com ::after */
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  left: -60px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.03);
+}
+
+.hero-conteudo {
+  position: relative; /* ← fica acima dos ::before e ::after */
+  z-index: 1;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+/* Destaque colorido dentro do h1 */
+.hero h1 span {
+  color: #a78bfa;
+}
+
+.hero p {
+  font-size: 18px;
+  opacity: .85;
+  margin-bottom: 36px;
+}
+
+.hero-botoes {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-primario {
+  background: #7c3aed;
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 15px;
+  transition: background 0.2s, transform 0.2s;
+}
+
+/* :hover — muda estilo ao passar o mouse */
+.btn-primario:hover {
+  background: #6d28d9;
+  transform: translateY(-2px);
+}
+
+.btn-secundario {
+  border: 2px solid rgba(255,255,255,.5);
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.btn-secundario:hover {
+  border-color: #fff;
+  background: rgba(255,255,255,.08);
+}
+
+/* ── STATS ── */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  background: #f8f7ff;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.stat {
+  padding: 30px 48px;
+  text-align: center;
+  border-right: 1px solid #e5e7eb;
+}
+
+/* :last-child — remove borda do último item */
+.stat:last-child {
+  border-right: none;
+}
+
+.stat strong {
+  display: block;
+  font-size: 28px;
+  color: #7c3aed;
+  font-weight: 800;
+}
+
+.stat span {
+  font-size: 13px;
+  color: #666;
+}
+
+/* ── CURSOS ── */
+.cursos {
+  padding: 70px 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cursos h2 {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.subtitulo {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 48px;
+}
+
+.lista-cursos {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card-curso {
+  background: #fff;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 32px 24px;
+  width: 300px;
+  text-align: left;
+  position: relative;
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.card-curso:hover {
+  border-color: #7c3aed;
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(124,58,237,.12);
+}
+
+/* Classe extra para o card em destaque */
+.card-curso.destaque {
+  border-color: #7c3aed;
+  background: #faf5ff;
+}
+
+/* Badge "Mais popular" usando ::before no destaque */
+.card-curso.destaque::before {
+  content: '⭐ Mais Popular';
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #7c3aed;
+  color: #fff;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 4px 16px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.curso-icone { font-size: 36px; margin-bottom: 12px; }
+
+.card-curso h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.card-curso > p {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+.curso-topicos {
+  list-style: none;
+  margin-bottom: 24px;
+}
+
+/* ::before para criar marcadores personalizados */
+.curso-topicos li::before {
+  content: '✓ ';
+  color: #7c3aed;
+  font-weight: bold;
+}
+
+.curso-topicos li {
+  font-size: 13px;
+  color: #555;
+  padding: 4px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* :last-child dentro de .curso-topicos */
+.curso-topicos li:last-child {
+  border-bottom: none;
+}
+
+.curso-rodape {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 16px;
+}
+
+.preco {
+  font-size: 22px;
+  font-weight: bold;
+  color: #7c3aed;
+}
+
+.btn-curso {
+  background: #7c3aed;
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.btn-curso:hover { background: #6d28d9; }
+
+/* ── DEPOIMENTOS ── */
+.depoimentos {
+  background: #f8f7ff;
+  padding: 70px 24px;
+  text-align: center;
+}
+
+.depoimentos h2 {
+  font-size: 28px;
+  margin-bottom: 40px;
+}
+
+.lista-depoimentos {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.depoimento {
+  background: #fff;
+  border-left: 4px solid #7c3aed;
+  border-radius: 0 8px 8px 0;
+  padding: 24px;
+  max-width: 300px;
+  text-align: left;
+  font-style: normal;
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+}
+
+.depoimento p {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 12px;
+  line-height: 1.7;
+}
+
+.depoimento cite {
+  font-size: 12px;
+  color: #7c3aed;
+  font-weight: bold;
+}
+
+/* ── RODAPÉ ── */
+.rodape {
+  background: #0f0c29;
+  color: #888;
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 13px;
+}
+
+.rodape-links {
+  display: flex;
+  gap: 20px;
+}
+
+.rodape-links a { color: #888; }
+
+.rodape-links a:hover { color: #fff; }

@@ -1,0 +1,232 @@
+/* ══════════════════════════════
+   ex2-loja.css  —  CSS GRID
+   ══════════════════════════════
+   TÉCNICA PRINCIPAL: CSS Grid
+   Conceitos: grid-template-columns,
+   repeat, auto-fill, minmax,
+   position relative/absolute
+   ══════════════════════════════ */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  color: #333;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* CABEÇALHO */
+.topo {
+  background: #1a1a2e;
+  color: #fff;
+  padding: 14px 24px;
+}
+
+.topo-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.logo { font-size: 20px; font-weight: bold; }
+
+.busca {
+  display: flex;
+  flex: 1;
+  max-width: 480px;
+}
+
+.busca input {
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  font-size: 14px;
+}
+
+.busca button {
+  padding: 8px 16px;
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.carrinho { font-size: 14px; color: #ccc; }
+
+/* BANNER */
+.banner {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: #fff;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.banner h1 { font-size: 36px; margin-bottom: 10px; }
+.banner p  { font-size: 16px; margin-bottom: 24px; opacity: .9; }
+
+.btn-banner {
+  background: #fff;
+  color: #e74c3c;
+  padding: 12px 32px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 15px;
+  display: inline-block;
+  transition: transform 0.2s;
+}
+
+.btn-banner:hover { transform: scale(1.05); }
+
+/* SEÇÃO LOJA */
+.loja {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 24px;
+}
+
+.secao-titulo {
+  font-size: 22px;
+  margin-bottom: 24px;
+  border-left: 4px solid #e74c3c;
+  padding-left: 12px;
+}
+
+/* GRADE DE PRODUTOS — CSS Grid principal */
+.grade-produtos {
+  display: grid;
+
+  /* repeat(auto-fill, minmax(260px, 1fr)):
+     Cria automaticamente o número de colunas
+     que couberem, com no mínimo 260px cada */
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+
+  gap: 20px; /* espaçamento entre cards */
+}
+
+/* CARD DE PRODUTO */
+.produto {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.produto:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,.15);
+}
+
+/* Imagem com badge posicionado em cima */
+.produto-img {
+  position: relative; /* ← necessário para o badge */
+}
+
+.produto-img img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.badge {
+  position: absolute; /* ← sai do fluxo e flutua sobre a imagem */
+  top: 12px;
+  right: 12px;
+  background: #e74c3c;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+/* Informações do produto */
+.produto-info {
+  padding: 16px;
+}
+
+.produto-info h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.preco-antigo {
+  font-size: 13px;
+  color: #999;
+  text-decoration: line-through;
+  margin-bottom: 2px;
+}
+
+.preco {
+  font-size: 20px;
+  font-weight: bold;
+  color: #e74c3c;
+  margin-bottom: 14px;
+}
+
+.btn-comprar {
+  width: 100%;
+  padding: 10px;
+  background: #1a1a2e;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+
+.btn-comprar:hover { background: #e74c3c; }
+
+/* RODAPÉ */
+.rodape {
+  background: #1a1a2e;
+  color: #aaa;
+  padding: 40px 24px 20px;
+  margin-top: 60px;
+}
+
+/* Rodapé também usa Grid! */
+.rodape-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* ← 3 colunas iguais */
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto 28px;
+}
+
+.rodape-grid h4 {
+  color: #fff;
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+.rodape-grid p,
+.rodape-grid ul {
+  font-size: 13px;
+  line-height: 2;
+  list-style: none;
+}
+
+.rodape-grid ul li a {
+  color: #aaa;
+}
+
+.rodape-grid ul li a:hover { color: #fff; }
+
+.rodape-copy {
+  text-align: center;
+  font-size: 12px;
+  color: #555;
+  border-top: 1px solid #333;
+  padding-top: 16px;
+}

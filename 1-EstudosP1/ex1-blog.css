@@ -1,0 +1,190 @@
+/* ══════════════════════════════
+   ex1-blog.css  —  FLEXBOX
+   ══════════════════════════════
+   TÉCNICA PRINCIPAL: Flexbox
+   Conceitos: flex, gap, justify-content,
+   align-items, flex-direction
+   ══════════════════════════════ */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f2f5;
+  color: #333;
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* CABEÇALHO — Flexbox em linha */
+.cabecalho {
+  background: #1a1a2e;
+  color: #fff;
+  display: flex;                  /* ← ativa flexbox */
+  justify-content: space-between; /* ← logo na esquerda, nav na direita */
+  align-items: center;            /* ← alinha verticalmente ao centro */
+  padding: 16px 32px;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  gap: 24px; /* ← espaçamento entre links */
+}
+
+nav a {
+  color: #ccc;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+nav a:hover { color: #fff; }
+
+/* CONTEÚDO PRINCIPAL — Flexbox com sidebar */
+.conteudo {
+  display: flex;
+  gap: 28px;
+  max-width: 1100px;
+  margin: 32px auto;
+  padding: 0 20px;
+  align-items: flex-start; /* ← sidebar não estica até o fim */
+}
+
+/* COLUNA DE POSTS */
+.posts {
+  flex: 1; /* ← ocupa todo o espaço restante */
+  display: flex;
+  flex-direction: column; /* ← cards empilhados em coluna */
+  gap: 20px;
+}
+
+/* CARD DE POST */
+.card-post {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+
+.card-post img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-corpo {
+  padding: 20px;
+}
+
+.tag {
+  background: #e8f4fd;
+  color: #1a6fa8;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 3px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+}
+
+.card-corpo h2 {
+  font-size: 18px;
+  margin: 10px 0 8px;
+}
+
+.card-corpo p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.btn {
+  background: #1a6fa8;
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 4px;
+  font-size: 13px;
+  display: inline-block;
+  transition: background 0.2s;
+}
+
+.btn:hover { background: #145d8a; }
+
+/* SIDEBAR */
+.sidebar {
+  width: 260px;         /* ← largura fixa */
+  flex-shrink: 0;       /* ← não encolhe */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.widget {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+
+.widget h3 {
+  font-size: 15px;
+  margin-bottom: 12px;
+  border-bottom: 2px solid #1a6fa8;
+  padding-bottom: 8px;
+}
+
+.widget p {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.widget ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.widget ul li a {
+  font-size: 13px;
+  color: #555;
+}
+
+.widget ul li a:hover { color: #1a6fa8; }
+
+.widget input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.widget button {
+  width: 100%;
+  padding: 8px;
+  background: #1a6fa8;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.widget button:hover { background: #145d8a; }
+
+/* RODAPÉ */
+.rodape {
+  background: #1a1a2e;
+  color: #888;
+  text-align: center;
+  padding: 20px;
+  font-size: 13px;
+}

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Cola de Estudo – HTML & CSS</title>
+  <link rel="stylesheet" href="cola.css"/>
+</head>
+<body>
+
+  <header class="topo">
+    <h1>📋 Cola de Estudo — HTML &amp; CSS</h1>
+    <p>Referência rápida para provas com 80 minutos</p>
+  </header>
+
+  <main class="grade">
+
+    <!-- Card 1 -->
+    <section class="card">
+      <h2>🏗️ Estrutura Básica HTML</h2>
+      <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"/&gt;
+  &lt;title&gt;Título&lt;/title&gt;
+  &lt;link rel="stylesheet" href="style.css"/&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  ...
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </section>
+
+    <!-- Card 2 -->
+    <section class="card">
+      <h2>📐 Flexbox</h2>
+      <pre><code>.container {
+  display: flex;
+  flex-direction: row;    /* ou column */
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.item {
+  flex: 1;       /* ocupa espaço igual */
+  flex-shrink: 0; /* não encolhe */
+}</code></pre>
+    </section>
+
+    <!-- Card 3 -->
+    <section class="card">
+      <h2>🔲 CSS Grid</h2>
+      <pre><code>.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  /* ou: repeat(3, 1fr) */
+  /* ou: repeat(auto-fill, minmax(200px,1fr)) */
+  gap: 20px;
+  grid-template-rows: auto;
+}
+
+/* Fazer item ocupar 2 colunas: */
+.item-grande {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+}</code></pre>
+    </section>
+
+    <!-- Card 4 -->
+    <section class="card">
+      <h2>🎯 Posicionamento</h2>
+      <pre><code>/* Pai precisa ter position: relative */
+.pai { position: relative; }
+
+/* Filho flutua sobre o pai */
+.filho {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+/* Fica fixo na tela ao rolar */
+.fixo { position: fixed; top: 0; }
+
+/* Empurra outros elementos normalmente */
+.normal { position: relative; top: 5px; }</code></pre>
+    </section>
+
+    <!-- Card 5 -->
+    <section class="card">
+      <h2>🎨 Seletores Importantes</h2>
+      <pre><code>/* Tag */
+p { color: red; }
+
+/* Classe */
+.card { background: white; }
+
+/* ID */
+#logo { font-size: 24px; }
+
+/* Pseudo-classes */
+a:hover { color: blue; }
+li:first-child { font-weight: bold; }
+li:last-child { border: none; }
+li:nth-child(2) { color: green; }
+
+/* Pseudo-elementos */
+p::before { content: '→ '; }
+p::after  { content: ' ←'; }</code></pre>
+    </section>
+
+    <!-- Card 6 -->
+    <section class="card">
+      <h2>📦 Box Model</h2>
+      <pre><code>.caixa {
+  width: 200px;
+  height: 100px;
+
+  padding: 10px;       /* espaço interno */
+  border: 2px solid;   /* borda */
+  margin: 20px;        /* espaço externo */
+
+  /* Padding não aumenta o tamanho total: */
+  box-sizing: border-box;
+}</code></pre>
+    </section>
+
+    <!-- Card 7 -->
+    <section class="card">
+      <h2>🌈 Cores e Backgrounds</h2>
+      <pre><code>/* Formas de declarar cor */
+color: red;
+color: #ff0000;
+color: rgb(255, 0, 0);
+color: rgba(255, 0, 0, 0.5); /* com opacidade */
+
+/* Background */
+background-color: #f0f0f0;
+background-image: url('img.jpg');
+background-size: cover;
+background-position: center;
+
+/* Gradiente */
+background: linear-gradient(135deg, #667eea, #764ba2);</code></pre>
+    </section>
+
+    <!-- Card 8 -->
+    <section class="card">
+      <h2>✍️ Tipografia</h2>
+      <pre><code>p {
+  font-size: 16px;
+  font-weight: bold;   /* ou 400, 700 */
+  font-style: italic;
+  line-height: 1.6;
+  text-align: center;  /* left, right, justify */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #333;
+}
+
+/* Fonte externa (no &lt;head&gt;): */
+/* &lt;link href="fonts.googleapis.com/css2?family=Roboto"&gt; */
+body { font-family: 'Roboto', sans-serif; }</code></pre>
+    </section>
+
+    <!-- Card 9: Estratégia de prova -->
+    <section class="card card-dica">
+      <h2>⏱️ Estratégia para 80 minutos</h2>
+      <ol>
+        <li><strong>0–5 min</strong> → Leia o enunciado, planeje a estrutura</li>
+        <li><strong>5–15 min</strong> → Escreva o HTML completo (cabeçalho, main, footer)</li>
+        <li><strong>15–55 min</strong> → Escreva o CSS (reset → layout → componentes)</li>
+        <li><strong>55–70 min</strong> → Ajustes visuais, hover states</li>
+        <li><strong>70–80 min</strong> → Revisão final, valide links e classes</li>
+      </ol>
+      <div class="dicas-lista">
+        <p>✅ Sempre começa pelo <code>* { box-sizing: border-box; }</code></p>
+        <p>✅ Use <code>max-width + margin: 0 auto</code> para centralizar</p>
+        <p>✅ Flexbox para Nav e Sidebar, Grid para galeria/cards</p>
+        <p>✅ Nomeie classes em português e com sentido claro</p>
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>

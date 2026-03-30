@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Exemplo 1 – Blog com Flexbox</title>
+  <link rel="stylesheet" href="ex1-blog.css"/>
+</head>
+<body>
+
+  <header class="cabecalho">
+    <div class="logo">📰 MeuBlog</div>
+    <nav>
+      <a href="#">Início</a>
+      <a href="#">Artigos</a>
+      <a href="#">Sobre</a>
+      <a href="#">Contato</a>
+    </nav>
+  </header>
+
+  <main class="conteudo">
+
+    <!-- Coluna principal -->
+    <section class="posts">
+
+      <article class="card-post">
+        <img src="https://placehold.co/600x200/4a90d9/fff?text=Post+1" alt="Post 1"/>
+        <div class="card-corpo">
+          <span class="tag">Tecnologia</span>
+          <h2>Como aprender HTML e CSS rápido</h2>
+          <p>Aprender HTML e CSS é mais simples do que parece. Com prática diária você evolui muito rápido.</p>
+          <a href="#" class="btn">Ler mais</a>
+        </div>
+      </article>
+
+      <article class="card-post">
+        <img src="https://placehold.co/600x200/e87c3e/fff?text=Post+2" alt="Post 2"/>
+        <div class="card-corpo">
+          <span class="tag">Design</span>
+          <h2>Dicas de layout para iniciantes</h2>
+          <p>Entenda Flexbox e Grid e nunca mais sofra para posicionar elementos na tela.</p>
+          <a href="#" class="btn">Ler mais</a>
+        </div>
+      </article>
+
+      <article class="card-post">
+        <img src="https://placehold.co/600x200/27ae60/fff?text=Post+3" alt="Post 3"/>
+        <div class="card-corpo">
+          <span class="tag">Carreira</span>
+          <h2>Portfólio: por onde começar?</h2>
+          <p>Um bom portfólio pode abrir portas. Veja como montar o seu do zero.</p>
+          <a href="#" class="btn">Ler mais</a>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="widget">
+        <h3>Sobre o Blog</h3>
+        <p>Blog de tecnologia e desenvolvimento web para iniciantes e entusiastas.</p>
+      </div>
+      <div class="widget">
+        <h3>Categorias</h3>
+        <ul>
+          <li><a href="#">Tecnologia (12)</a></li>
+          <li><a href="#">Design (8)</a></li>
+          <li><a href="#">Carreira (5)</a></li>
+          <li><a href="#">Tutoriais (20)</a></li>
+        </ul>
+      </div>
+      <div class="widget">
+        <h3>Newsletter</h3>
+        <input type="email" placeholder="Seu e-mail"/>
+        <button>Assinar</button>
+      </div>
+    </aside>
+
+  </main>
+
+  <footer class="rodape">
+    <p>© 2024 MeuBlog – Todos os direitos reservados</p>
+  </footer>
+
+</body>
+</html>
