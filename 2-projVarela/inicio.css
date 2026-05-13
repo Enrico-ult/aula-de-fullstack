@@ -1,0 +1,48 @@
+body{
+     background-color: white;
+     background-image: url(dokidokibackpoem.png);
+     width: 100%;
+     background-repeat: no-repeat;
+     background-position: center;
+     background-size: cover;
+     background-attachment: fixed;
+     height: 0px;
+     margin: 0;
+}
+.titulo{
+    color: darkgrey;
+    text-align: center;
+    margin-top: 90px;
+    margin-left: -150px;
+    font-size: 40pt;
+    text-shadow:
+        -2px -1px 0 black,  
+         2px -1px 0 black,
+        -2px  2px 0 black,
+         2px  2px 0 black;
+}
+.nomes{
+   
+    color: darkgrey;
+    text-align: center;
+    margin-top: 40px;
+    margin-left: -300px;
+    font-size: 20pt;
+    text-shadow:
+        -1px -1px 0 black,  
+         1px -1px 0 black,
+        -1px  1px 0 black,
+         1px  1px 0 black;
+}
+.nomesesq{
+    color: darkgrey;
+    text-align: left;
+    margin-top: -260px;
+    margin-left: 60px;
+    font-size: 20pt;
+    text-shadow:
+        -1px -1px 0 black,  
+         1px -1px 0 black,
+        -1px  1px 0 black,
+         1px  1px 0 black;
+}

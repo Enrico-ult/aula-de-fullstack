@@ -1,0 +1,57 @@
+@font-face{
+    font-family: 'Persona Computer';
+    src: url('PERSONAL.TTF') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+.titulo{
+    font-family: 'Persona Computer';
+    text-align: center;
+    margin-top: 20px;
+    color: whitesmoke;
+    text-shadow:
+        -1px -1px 0 black,  
+         1px -1px 0 black,
+        -1px  1px 0 black,
+         1px  1px 0 black;
+    font-size: 40pt;
+    letter-spacing: 2px;
+}
+body{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 90vh;
+    margin: 0;
+    background-image: url(persona3dim.png);
+    
+}
+.voltar{
+    text-align: center;
+    font-size: 18pt;
+}
+.portal{
+    justify-content: center;
+    display: flex;
+    
+}
+.frase {
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 30pt;
+    color: cyan;
+    text-shadow:
+        -1px -1px 0 black,  
+         1px -1px 0 black,
+        -1px  1px 0 black,
+         1px  1px 0 black;
+}
+table {
+    width: 600px;        /* largura da tabela */
+    font-size: 1.5rem;   /* tamanho do texto */
+}
+
+th, td {
+    padding: 20px 30px;  /* espaço interno das células */
+}
