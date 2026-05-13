@@ -1,0 +1,34 @@
+#canvas{
+    background-color: transparent;
+    border: 8px solid #D4A373;
+}
+body{
+     background-color: white;
+     background-image: url(velvetroom2.png);
+     width: 100%;
+     background-repeat: no-repeat;
+     background-position: center;
+     background-size: cover;
+     background-attachment: fixed;
+     height: 90vh;
+     margin: 0;
+}
+h1{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 48px;
+    color: lightblue;
+    text-shadow:
+        -2px -2px 0 black,  
+         2px -2px 0 black,
+        -2px  2px 0 black,
+         2px  2px 0 black;
+    text-align: center;
+}
+.anima{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home{
+    text-align: center;
+}
