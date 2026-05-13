@@ -1,0 +1,89 @@
+/* p{color: brown ;
+    font-size: 18pt;
+} */
+.cabecalho{
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    gap: 16px; 
+}
+
+.titulo{
+    color: red;
+    size: 40;
+    text-shadow:
+        -4px -4px 0 black,  
+         4px -4px 0 black,
+        -4px  4px 0 black,
+         4px  4px 0 black;
+}
+.enrico{ 
+    color: lightgrey;
+    text-shadow:
+        -1px -1px 0 black,  
+         1px -1px 0 black,
+        -1px  1px 0 black,
+         1px  1px 0 black;
+}
+.linkedin{
+    color: whitesmoke;
+    text-shadow:
+        -1px -1px 0 black,  
+         1px -1px 0 black,
+        -1px  1px 0 black,
+         1px  1px 0 black;
+    text-align: center;
+}
+.pref{
+    color: grey;
+    font-size: small
+}
+.linhareta{
+    display: flex; 
+    gap: 40px; 
+    align-items: flex-start;
+    justify-content: center;
+}
+.pessoal{
+    color: darkorchid;
+    font-size: 20pt;
+}
+.baixo{
+    display: flex; 
+    gap: 40px; 
+    align-items: flex-start;
+    justify-content: center;
+}
+a:hover {
+    color: red
+}
+a{
+    color: white;
+}
+
+body{
+     background-color: white;
+     background-image: url(backgroundtokyopersona.webp);
+     width: 100%;
+     background-repeat: no-repeat;
+     background-position: center;
+     background-size: cover;
+     background-attachment: fixed;
+     height: 100vh;
+     margin: 0;
+}
+
+h1 {
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    
+}
+@font-face {
+    font-family: 'Persona Non Grata';
+    src: url('Persona Non Grata.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+.home{
+    text-align: center;
+}
